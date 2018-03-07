@@ -5,9 +5,19 @@ Loss Function :
 
 Softmax Function is a activation function given by the following formula 
 
-softmax function =  (e^wxk) / sigma j = 1 to k (e^wxj)
+softmax function =  (e^wxi) / sigma j = 1 to k (e^wxj)
 
 Now this function allows us to interpret the output as probabilities since it is normalized. Now the Cost entropy error  is the measure of 
 error  calculated at this softmax layer given by 
 
     softmax function              −log(efyi∑jefj)
+
+# More on softmax 
+
+The softmax maps arbitary value of xi to a probability distribution pi. It is called softmax because , 
+
+"MAX" - The Numerator (probabilty ) is maxmized values for larger value of xi. 
+"Soft" - It still assign some minimal probability for low value xi as well (Not so rigid)
+
+Intution of how softmax assign probability to the dot product of w.x is easy to intrepet from above conclusion . If w and x are similiar 
+then the dot product is higher and thus higher probability.
