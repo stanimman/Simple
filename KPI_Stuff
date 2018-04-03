@@ -1,0 +1,45 @@
+General Notes : 
+
+ - Add your thought / notes describing each dashboard
+ 
+BottleNeck 
+1. Business understanding (Deliberating/secondary research takes so much of time)
+2. Rework after creating the Dashboard on the metrics 
+ 
+Claims Dashboard
+ 1. MOM Claims paid (Per member cost in secondary axis)
+ 2. Different Category of Claims (Q-o-Q)
+ 3. Total Claims manually processed, PMPM (Maybe 1.5 or less) (M-o-M)
+ 4. Auto-adjudication rates (should be over 85%) (M-o-M)
+ 
+ 
+ 
+Filter : 
+ Claims Type
+ Facility Type
+ LOB
+ County
+ Select All
+ 
+ 
+
+Pended Claims Analysis
+ 
+Today 
+	1. Top Reason for pended claims (Static)
+	2. Claims Pending, Aged under 30 Days (M-o-M)
+	3. Adjustment Pending, Aged Under 30 Days (M-o-M)
+	4. What happens to the pended claims (Static)
+	
+Claims Processing Efficiency for Clean Claims
+
+Tomorrow
+
+    1. Claims Cycle Time (Average Days from Date of Receipt to Date of Payment), by LOB, compared year over year (Y-o-Y)
+	2. Claims Closed by week for all (What is it ?) 
+	3. Payments to network/OON providers clean claims TAT (M-o-M)
+	4. Payment of contracted providers claims TAT (M-o-M)
+	
+
+  
+ 
