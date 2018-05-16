@@ -1,0 +1,27 @@
+Convolution  
+
+Conv =  tf.nn.conv2d(input,filter,strides,padding)
+Pool =  tf.nn.max_pool(value,ksize,strides,padding,data_format=‘NHWC’)
+ 
+ Input, value = (batch, height, width, channels) 
+ filter = (filter_height, filter_width, channels, out_channels) [out Channel – No.of filter used ]
+ strides = list of length 4 (one for each input dimension of input) [1,2,2,1]  (Stride by 2)
+ ksize = list of length 4 (one for each input dimension of input) [1,2,2,1]  size of the pooling 	window (2x2)
+
+relu = tf.nn.relu(tf.nn.bias_add(conv,conv1_biases))
+	FC7 Layer
+Assume pooling is the last layer before fc then
+# Reshape the pool cuboid into a 2D matrix to feed it to FC
+# fully connected layers.
+  pool_shape = pool.get_shape().as_list()
+  reshape = tf.reshape(
+      pool,
+      [pool_shape[0], pool_shape[1] * pool_shape[2] * pool_shape[3]])
+hidden = tf.nn.relu(tf.matmul(reshape, fc1_weights) + fc1_biases)
+Fc1_weights = tf.variable (tf.truncated_normal([ reshape[1],fc_hidden_layer_size],stddev=0.1,
+                        seed=SEED,
+                        dtype=tf.float32))
+fc1_biases = tf.Variable(tf.constant(0.1, shape=[512], dtype=tf.float32) 
+hidden = tf.nn.relu(tf.matmul(reshape, fc1_weights) + fc1_biases)
+	if train:
+    hidden = tf.nn.dropout(hidden, 0.5, seed=SEED)
