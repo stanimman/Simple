@@ -66,4 +66,30 @@ https://foreverdata.org/datasets.html
 Resources
 http://www.ritchieng.com/machine-learning-resources/
 
+class Titanic_Embedding_Neural(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, context_size):
+        super(Titanic_Embedding_Neural, self).__init__()
+        self.Pclassembeddings = nn.Embedding(input_size, embedding_dim)
+		self.Embarkedembeddings = nn.Embedding(Barkinput_size, Barkembedding_dim)
+		self.Personembeddings = nn.Embedding(Personinput_size, Personembedding_dim)
+        self.linear1 = nn.Linear(embedding_dim+Barkembedding_dim+Personembedding_dim+len(cont_variable)], 128)
+		self.relu = nn.ReLU()
+		self.linear2 = nn.Linear(128, 2)
+
+    def forward(self, input):
+        e1 = self.embeddings(input[Pclass].aslist).view((-1, Pclassembeddings.dim))  # pass the input Pclass as list for all passengers  and reshape to the dimension of embedding vector
+        e2 = self.Embarkedembeddings(input[Embarked].aslist).view((-1, Barkembeddings_dim))
+		e3 = self.Personembeddings(input[Person].aslist).view((-1, Personembeddings_dim))	
+		c1 = input['cont_variable']
+        x = torch.cat((e1, e2, e3,c1), 1) # need to try and see if you are getting the correct dimensions
+		out = self.linear1(x)
+		out = self.relu(out)
+		out = self.linear2(out)
+        return out
+		
+		
+https://github.com/entron/entity-embedding-rossmann/blob/kaggle/models.py
+
+Use for inspiration
+
 
