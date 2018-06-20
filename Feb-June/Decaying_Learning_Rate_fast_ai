@@ -1,0 +1,14 @@
+learn.fit(lr, 3, cycle_len=1, cycle_mult=2)
+
+
+The cycle_len and cycle_mult parameters are used for doing a variation on stochastic gradient descent called “stochastic gradient descent with restarts” (SGDR).
+
+Briefly, the idea is to start doing our usual minibatch gradient descent with a given learning rate (lr), while gradually decreasing it (the fast.ai1 library uses “cosine annealing”)… until we jump it back up to lr!
+
+The cycle_len parameter governs how long we’re going to ride that cosine curve as we decrease… decrease… decrease… the learning rate. Cycles are measured in epochs, so cycle_len=1 by itself would mean to continually decrease the learning rate over the course of one epoch, and then jump it back up. 
+The cycle_mult parameter says to multiply the length of a cycle by something (in this case, 2) as soon as you finish one.
+
+So, here we’re going to do three cycles, of lengths (in epochs): 1, 2, and 4. So, 7 epochs in total, but our SGDR only restarts twice.
+
+
+http://forums.fast.ai/t/deeplearning-lecnotes2/7515/13
