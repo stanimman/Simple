@@ -1,0 +1,100 @@
+KNN
+Quite simple 
+Training is simple but do all work during testing
+
+if k =1 (less)
+High variance -- > How much the decision boundary change given a new data (Over fit)
+Low Bias --> How well it generalize to the unseen data 
+
+But if k = 100 (More) , then
+Low Variance ---> 
+High Bias ---> 
+
+parameters
+
+1. K 
+2. Distance to choose neighbor (Euclidean., can be any distance)
+
+SVM
+
+Decision Boundary -- All time it is just a linear structure (Line/Plane)
+The data points are adjusted so that there will  be a linear decision boundary by few transformation - Kernal Tricks
+	Increase the dimension to make it separable using : Quadratic and RBF kernal
+	
+Max - Margin ( SVM tries to find maximum margin between the separating hyperplane (Decision boundary) and two category of data points
+
+Support Vector : The data points (vectors for high dimensions) based on which the decision boundary is decided is called Support Vectors
+
+Gamma : Parameter in  RBF Kernal  which indicates how far is the decision boundary from the support vectors
+	  : A small gamma means a Gaussian with a large variance so the influence of x_j is more, and the model can overfit (More Wiggling)
+	  : If gamma is large, then variance is small implying the support vector does not have wide-spread influence.
+		Technically speaking, large gamma leads to high bias and low variance models
+	  
+C : Parameter which indicated how much of the slack variable (Misclassification) can be allowed 
+  : Higher C = 1000 means less misclassification is allowed and more strict
+  : Lower C = 10 allows misclassification
+  
+SVM should be normalized - both the train and test data shd be scaled by the same factors (eg)
+
+Adv : Avoid attributes in greater numeric ranges dominating those in smaller numeric ranges
+	: Avoid numerical difficulties during the calculation
+	We recommend linearly scaling each attribute to the range [−1, +1] or [0, 1].
+	
+
+Queries :
+	Does High Gamma means - low variance is it true ?
+Answered -- Hurray	
+	ROC - How do we generate the curve , done by varying the probabilty threshold for the class (predict 1 if p > 0.5 then p > 0.6 like wise )
+	
+	Remember the square that is critical 
+
+More Clarity Required : How mapping variable in 2 dim to n dimension happens   , 
+						In realty each data point is not being mapped to a higher dimension and the operation happens but using some kernel tricks (Mercers Theorem) , the dot product is been applied at the higher dimension 
+	
+
+Decision Tree
+
+	More interpretable than SVM
+	More Faster than SVM
+	Single tree makes is  less generalized / over-fitting is an issue / High variance
+	
+Working of decision tree :
+
+Classification :
+	2 decision to make in decision tree is ?
+	
+	Which feature to choose and which threshold to use ?
+	
+	It works in greedy way at that particular point it goes through all data point and 
+	
+Bagging :
+	Pick N random sample with replacement repeatedly say 10 time and predict the output using the decision tree for 10 different time (using 10 different dataset)
+	and then average the result or use majority voting to arrive @ a final prediction
+	
+	
+	
+Bayes Rule :
+
+Prior
+Posterior 
+
+BEAM
+
+Learning from the Google course
+
+Many layer of ML for a problem 
+
+Equality of opportunity - our model should be able to predict all type of shoes not specific type , 
+we try and test if the model is giving better evaluation metrics results for all different kind of input (different type of shoe ) not just over all accuracy
+
+bigquery-public-data.medicare.part_d_prescriber_2014
+
+https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/
+
+
+
+
+
+
+
+
