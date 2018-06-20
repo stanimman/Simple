@@ -1,0 +1,57 @@
+def throw_a_coin(N):
+    return np.random.choice(['H','T'], size=N)
+throws=throw_a_coin(40)
+print "Throws:"," ".join(throws)
+print "Number of Heads:", np.sum(throws=='H')
+print "p1 = Number of Heads/Total Throws:", np.sum(throws=='H')/40.
+
+Output
+Throws: H T T T T T T H T H H T H T T H H T T T H T T H T T T H H T T H T T T H H T T H
+Number of Heads: 15
+p1 = Number of Heads/Total Throws: 0.375
+
+PMF - When we are using discrete random variable
+PDf - When we use cont. random variables
+
+
+Distribution :
+
+https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/
+
+Bernoulli Distribution - parameters (p)
+
+ There’s no midway in Bernoulli has only two possible outcomes, namely 1 (success) and 0 (failure), and a single trial.
+ The probabilities of success and failure need not be equally likely, like the result of a fight between me and Undertaker.
+ 
+ The probability mass function is given by: p^x(1-p)^1-x  where x € (0, 1).
+ 
+ Basically expected value of any distribution is the mean of the distribution
+ 
+ E(X) = 1*p + 0*(1-p) = p
+ 
+ The variance of a random variable from a bernoulli distribution is:
+
+V(X) = E(X²) – [E(X)]² = p – p² = p(1-p)
+
+There are many examples of Bernoulli distribution such as whether it’s going to rain tomorrow or
+not where rain denotes success and no rain denotes failure and Winning (success) or losing (failure) the game
+
+
+Uniform Distribution : parameters (a,b)
+The probabilities of getting these outcomes are equally likely and that is the basis of a uniform distribution. 
+Unlike Bernoulli Distribution, all the n number of possible outcomes of a uniform distribution are equally likely. (Rolling a fair Die)
+
+
+Binomial Distribution : - Parameter (n,p)
+
+A Bernoulli distribution repeated n times becomes binomial distribution. 
+
+The outcomes need not be equally likely. Remember the example of a fight between me and Undertaker? 
+
+On the basis of the above explanation, the properties of a Binomial Distribution are
+
+Each trial is independent.
+There are only two possible outcomes in a trial- either a success or a failure.
+A total number of n identical trials are conducted.
+The probability of success and failure is same for all trials. (Trials are identical.)
+
