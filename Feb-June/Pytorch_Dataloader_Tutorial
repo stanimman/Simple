@@ -1,0 +1,66 @@
+# coding: utf-8
+# In[1]:
+pwd
+# In[2]:
+import pandas as pd
+# In[3]:
+landmarks_frame = pd.read_csv('C:/Users/584140/Downloads/faces/faces/face_landmarks.csv')
+# In[4]:
+landmarks_frame.head(5)
+# In[46]:
+landmarks_frame.shape
+# ###### Learning about iloc
+# `iloc works similiar to indexing in Matrix .iloc[1,2] select first row , 2nd column and so on`
+# In[28]:
+landmarks_frame.iloc[1:4,:]
+# In[29]:
+type(landmarks_frame.iloc[1:4,:])
+# In[34]:
+landmarks_frame.iloc[65,1:].head(5)
+# In[36]:
+mat = landmarks_frame.iloc[65,1:].as_matrix()
+print(mat)
+# `iloc works similiar to indexing in Matrix .iloc[1,2] select first row , 2nd column and so on `
+# ###### Change from panda data frame to array
+# `Let’s quickly read the CSV and get the annotations in an (N, 2) array where N is the number of landmarks using .asmatrix`
+# In[44]:
+n = 5
+img_name = landmarks_frame.iloc[n, 0]
+landmarks = landmarks_frame.iloc[n, 1:].as_matrix()
+landmarks = landmarks.astype('float').reshape(-1, 2)
+print('Image name: {}'.format(img_name))
+print('Landmarks shape: {}'.format(landmarks.shape))
+print('First 4 Landmarks: {}'.format(landmarks[:4]))
+# In[38]:
+import matplotlib.pyplot as plt
+import os
+from skimage import io, transform
+# ##### Plotting the image
+# `--- Need path to the image as input 
+#  --- Need to use plt.inshow(image path)
+#  --- plt. is like a layer build up we start with .imshow(image) --> plt.scatter then add scatter plot --> plt.pause a bit
+#  --- Finally create a figure and then show the figure using plt.figure() and plt.show()`
+# In[45]:
+def show_landmarks(image, landmarks):
+    """Show image with landmarks"""
+    plt.imshow(image)
+    plt.scatter(landmarks[:, 0], landmarks[:, 1], s=10, marker='.', c='r')
+    plt.pause(0.001)  # pause a bit so that plots are updated
+plt.figure()
+show_landmarks(io.imread(os.path.join('C:/Users/584140/Downloads/faces/faces/', img_name)),
+               landmarks)
+plt.show()
+# `One important detail I have missed out is that  - How Python takes the image as JPEG and converts it into numpy array
+#  This is done using io.imread(os.path.join('path to the image'))
+#  io.imread convert jpeg to ndarray of 3 channel 
+#  --- Great !!!!
+# `
+# In[48]:
+images_value = io.imread(os.path.join('C:/Users/584140/Downloads/faces/faces/', img_name))
+# In[49]:
+type(images_value)
+# In[51]:
+images_value.shape
+# # Dataset
+# 
+# ## Prelims is over we are going to look into dataset
