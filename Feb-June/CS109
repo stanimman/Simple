@@ -1,0 +1,69 @@
+CS 109
+
+
+movies.dtypes
+movies.describe()
+
+Statistical Model
+
+Parametric model Exploration :
+
+Exponential Distribution - Rate distribution (Lambda) - The rate at which email arrives 
+Density is not the probability , it can be greater than one . You integrate the density function to get the probability value ., 
+eg ; for any x what is the probability that it will be btw 4 to 9 can be obtained by integrating the density function. Need to write the eqn.
+
+The most important property of this distribution is it is memoryless which means
+
+
+Weibull Distribution  - Most used in survival analysis
+Take en exponential distribution and raise it to a power you get the Weibull distribution. 
+
+Family Tree of Parametric Distributions
+
+Binomial Distribution
+
+Poisson Distribution - most used for counts / Shd be working with rare event (mutation of genes etc.,)
+
+Zero Inflated Poisson
+
+Negative Binomial
+
+Normal Distribution :
+68-95-99.7% rule
+Maximizes the entropy
+Central Limit Theorem : A large number (n>30) of random Independent variable will make a normal distribution
+
+Log Normal Distribution (Human heights / Finance (stock market) - Widely used
+
+Theorem if your data is positive and doesn't work take log of the data 
+
+
+Binomial distribution approximates to normal distribution under certain conditions when p is closer to 0.5 
+
+R^2 Explained 
+
+y = X(theta) + epsilon
+
+Var(Y) = Var(X(theta)) + Var(epsilon) # Decomposition of Variation
+
+R^2  = Var(X(theta))  / Var(epsilon) # Numerator = Explained Variance , Denominator (Error Term epsilon) = Unexplained Variance ,
+
+So by definition R^2 is the percentage of variance explained (or) it is a goodness of fit but does not validate the model. 
+Adding more predictor means it only going to increase R^2
+
+Collinerity : You are interested in uncorrlated predictor variable(X) if there are 5 different category you include only 4 indicator 
+bcoz of the multicollinearity it all adds upto 1
+
+Lasso (L2) makes the paramter(beta) to zero
+
+
+
+
+
+
+
+
+
+
+
+
