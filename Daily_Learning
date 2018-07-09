@@ -92,4 +92,10 @@ https://github.com/entron/entity-embedding-rossmann/blob/kaggle/models.py
 
 Use for inspiration
 
+# Pytorch 
+
+Differential learning rate
+https://discuss.pytorch.org/t/how-to-perform-finetuning-in-pytorch/419/7
+
+
 
