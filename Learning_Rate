@@ -5,3 +5,15 @@ learning_rates = [1e-4, 1e-3, 1e-2]
         optimizer_ft = optim.SGD(model_ft.classifier.parameters(),lr, momentum=0.9)
         model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,
                        num_epochs=3)
+
+def create_lr_list(lr1,lr2):
+  list_lr = [lr1] * 195
+  list_lr.extend([lr2]*196)
+  return list_lr
+
+  
+list_layer = list(filter(lambda p: p.requires_grad, model_ft.parameters()))
+learning_rate_list  = create_lr_list(.000000001,.00001)
+
+
+[{'params':a,'lr':b} for a,b in zip(list_layer,learning_rate_list)]              
