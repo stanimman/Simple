@@ -10,3 +10,22 @@ plt.xlabel("Number of iteration")
 plt.ylabel("Loss")
 plt.title("Loss vs Number of Epoch")
 plt.show()
+
+# Function to view images of particular class from dataset
+
+def viewimage(Dataset,class_label):
+    """ Function to view first 10 images from Dataset with Image and label.	"""
+    ct = 0
+    fig = plt.figure(1, figsize=(16, 8))
+    grid = ImageGrid(fig, 111, nrows_ncols=(1, 8), axes_pad=0.05)
+    for i in range(len(transformed_train_dataset)):
+
+        img, label = Dataset[i]
+        if label == class_label :
+          ct += 1
+          #img2 = img.crop((100,0,280,512))
+          print(label)
+          ax = grid[ct]
+          ax.imshow(np.asarray(img))
+          if ct == 7 :
+            break
