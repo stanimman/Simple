@@ -29,3 +29,15 @@ def viewimage(Dataset,class_label):
           ax.imshow(np.asarray(img))
           if ct == 7 :
             break
+
+            
+import matplotlib.pyplot as plt
+import numpy as np
+learning_rate  = [1e-12,1e-10, 1e-8, 1e-6, 1e-4, 1e-2, 1e-1 ]
+log_learning_rate = np.log10(learning_rate)
+train_loss = [0.7685,0.7671,0.7671,0.7064,0.5518,0.6689,0.7559]
+plt.plot(log_learning_rate,train_loss)
+plt.xlabel("Log Learning rate")
+plt.ylabel("Train Loss")
+plt.title("Train Loss vs Log Learning rate")
+plt.show()
