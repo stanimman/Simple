@@ -1,0 +1,7 @@
+seq = [['c1','c2','c3','conv'],['c1','noconv'],['c2','c3','conv']]
+mylist = []
+for myList in seq:
+   mylist.extend(([(x,y) for x,y in zip(myList, myList[1:]) ]))
+df = pd.DataFrame(mylist,columns=['state1', 'state2'])
+counts = df.groupby('state1')['state2'].value_counts()
+probs = (counts / counts.sum()).unstack()
